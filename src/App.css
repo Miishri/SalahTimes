@@ -1,42 +1,99 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: white;
+  background: black;
+  height: 100vh;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: row;
+}
+
+#date {
+  font-size: 1.2rem;
+  text-align: right;
+
+  padding: 4%;
+}
+
+#current {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
   text-align: center;
+
+  padding-top: 4vh;
+  padding-bottom: 1vh;
+
+  font-weight: normal;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+#current .prayer-name {
+  font-size: 2.6rem;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+#current .prayer-time {
+  font-size: 1.6rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#next-prayer {
+  padding-top: 10px;
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.speaker {
+  margin-top: 3.5vh;
+  width: 4vh;
 }
 
-.card {
-  padding: 2em;
+.daily-prayers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+.daily-prayers > .prayer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+
+  width: 95vw;
+  height: 10vh;
+  border-radius: 8px;
+  background: rgba(98, 104, 104, 0.5);
+}
+
+.prayer:active {
+  opacity: 0.8;
+  transition: 0.1s opacity ease-out;
+}
+
+.prayer-name {
+  font-size: 2rem;
+}
+
+.prayer-time {
+  font-size: 2rem;
+}
+
+
+.now {
+  box-shadow: 0 0 5px 1px rgba(255, 255, 255, 0.8);
+}
+
+.now-off {
+  box-shadow: none;
 }
